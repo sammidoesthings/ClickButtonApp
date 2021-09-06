@@ -43,8 +43,31 @@
 
 
 .appContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
   background-color: pink;
+  line-height: 1.5;
   padding: 20px;
+}
+
+.appContainer div{
+  padding: 20px;
+  margin: 10px;
+}
+
+.clickMe{
+  border: 2px solid red;
+}
+.resetMe{
+  border: 2px solid blue;
+}
+.countLabel{
+  border: 2px solid green;
+}
+.textArea{
+  border: 2px solid yellow;
 }

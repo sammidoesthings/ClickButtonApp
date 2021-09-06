@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 function App() {
 const [count, setCount] = useState(0);
-const [paragraph, setParagraph] = useState("empty");
+const [paragraph, setParagraph] = useState("Input Text Here!");
 
 function handleChange(event){
   console.log(event.target.value)
@@ -21,13 +21,25 @@ const increase = () => {
 
   return (
     <div className="appContainer">
-        <button onClick={increase}>Click me!</button>
-        <button onClick={() => {
-          setCount(0)
-        }}>Reset me!</button>
-            {count}
-            clicks
+        <div className="clickMe">
+           <button onClick={increase}>Click me!</button>
+        </div>
+
+      <div className="resetMe">
+          <button onClick={() => {
+            setCount(0)
+          }}>Reset me!</button>
+      </div>
+
+      <div className="countLabel">
+            {count} clicks
+      </div>
+      <div className="textArea">
             <textarea value={paragraph} onChange={handleChange}></textarea>
+      </div>
+
+
+
     </div>
   );
 }
