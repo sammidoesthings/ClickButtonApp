@@ -61,16 +61,43 @@
   background-color: burlywood;
 }
 
+.clickMe button, .resetMe button{
+  background-color: #7F5A3B;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  height: 7vh;
+  width: 15vh;
+  font-size: 1rem;
+}
+
 .clickMe{
   border: 2px solid red;
-  /* opacity: 50%; how do i change just the background opacity and not the button? */
+  /* opacity: 50%; how do i make background transparent but not the button?*/
 }
 .resetMe{
   border: 2px solid blue;
 }
 .countLabel{
+  font-size: 2rem;
   border: 2px solid green;
 }
-.textArea{
+.textDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid yellow;
+}
+.textDiv button{
+  margin-top: 10px;
+  background-color: #7F5A3B;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  height: 7vh;
+  width: 30vh;
+  font-size: 1rem;
+}
+.messagePopup{
+  border: 3px solid purple;
 }

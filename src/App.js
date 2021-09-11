@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 
 function App() {
 const [count, setCount] = useState(0);
-const [paragraph, setParagraph] = useState("Input Text Here!");
+const [current, setCurrent] = useState("Input Text Here!");
+
+const [messages, setMessages] = useState([]);
 
 function handleChange(event){
   console.log(event.target.value)
-  setParagraph(event.target.value)
+  setCurrent(event.target.value)
 }
 
 const increase = () => {
@@ -18,12 +20,25 @@ const increase = () => {
   console.log(newValue)
 }
 
+let myMessageList = (<div class="messagePopup">
+your message appears here!
+{messages[0]}
+</div>)
 
+//HOW DO I onClick change the background color?
+//HOW DO I add a background image to each button?
+//HOW DO I add a background image to the entire app?
   return (
     <div className="appContainer">
-        <div className="clickMe">
+      
+
+      <div className="countLabel">
+            you have {count} coffee beans
+      </div>
+
+      <div className="clickMe">
            <button onClick={increase}>Click me!</button>
-        </div>
+      </div>
 
       <div className="resetMe">
           <button onClick={() => {
@@ -31,14 +46,18 @@ const increase = () => {
           }}>Reset me!</button>
       </div>
 
-      <div className="countLabel">
-            {count} clicks
-      </div>
-      <div className="textArea">
-            <textarea value={paragraph} onChange={handleChange}></textarea>
+      <div className="textDiv">
+            <textarea value={current} onChange={handleChange}></textarea>
+
+            <button onClick={() => {
+              let messageArr = messages;
+              messageArr.unshift(current)
+              setMessages(messageArr)
+              console.log(messageArr)
+            }}>submit your message!</button>
       </div>
 
-
+            {myMessageList}
 
     </div>
   );
